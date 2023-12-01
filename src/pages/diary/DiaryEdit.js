@@ -2,14 +2,20 @@ import React from 'react'
 import Header from '../../components/Header'
 import Main from '../../components/Main'
 import Footer from '../../components/Footer'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const DiaryEdit = () => {
+  const navigate = useNavigate();
+  const handleClickMenu = () => {
+    navigate(-1);
+  };
   const param = useParams();
   console.log(param);
+  
+
   return (
     <>
-        <Header>
+        <Header handleClickMenu = {handleClickMenu} icon="bt_back.svg">
           <p>My Diary Edit</p>
         </Header>
         <Main>
